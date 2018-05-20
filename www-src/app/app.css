@@ -1,0 +1,584 @@
+@font-face{
+        font-family: 'trajan-pro-3';
+        src: url('/fonts/goudytrajan-medium-pro-webfont.eot');
+        src: url('/fonts/goudytrajan-medium-pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/goudytrajan-medium-pro-webfont.woff2') format('woff2'),
+             url('/fonts/goudytrajan-medium-pro-webfont.woff') format('woff'),
+             url('/fonts/goudytrajan-medium-pro-webfont.ttf') format('truetype'),
+             url('/fonts/goudytrajan-medium-pro-webfont.svg#sourcesanspro-regular-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+        font-family: 'trajanpro-pro-3-bold';
+        src: url('/fonts/goudytrajan-bold-pro-webfont.eot');
+        src: url('/fonts/goudytrajan-bold-pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/goudytrajan-bold-pro-webfont.woff2') format('woff2'),
+             url('/fonts/goudytrajan-bold-pro-webfont.woff') format('woff'),
+             url('/fonts/goudytrajan-bold-pro-webfont.ttf') format('truetype'),
+             url('/fonts/goudytrajan-bold-pro-webfont.svg#goudytrajan-bold-pro-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+  font-family: 'sourcesanspro';
+  src: url('/fonts/sourcesanspro-regular-webfont.eot');
+  src: url('/fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+       url('/fonts/sourcesanspro-regular-webfont.woff') format('woff'),
+       url('/fonts/sourcesanspro-regular-webfont.ttf') format('truetype'),
+       url('/fonts/sourcesanspro-regular-webfont.svg#sourcesanspro-regular-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+  font-family: 'sourcesanspro-semibold';
+  src: url('/fonts/sourcesanspro-semibold-webfont.eot');
+  src: url('/fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+       url('/fonts/sourcesanspro-semibold-webfont.woff') format('woff'),
+       url('/fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+       url('/fonts/sourcesanspro-semibold-webfont.svg#sourcesanspro-semibold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background-color: white;
+  font-family: "sourcesanspro", Helvetica, Arial, sans-serif;
+  padding-top: 50px;
+  font-size: 14px;
+}
+
+b, strong, th, .btn {
+  font-weight: normal;
+  font-family: "sourcesanspro-semibold", Helvetica, Arial, sans-serif;
+}
+
+table {
+    font-size: .9em;
+}
+
+table thead {
+    background: #fff;
+}
+
+.tab-pane {
+    padding: 10px 0;
+}
+
+.nodata {
+    padding: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+table.center70 {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+}
+
+div.center70 {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+}
+
+.scrollfooterrow {
+    height: 30px;
+}
+
+.list-shade {
+    position: relative;
+    height: 80px;
+    margin-top: -80px;
+    width: 100%;
+    background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0.95) 50%
+    );
+    z-index:1;
+}
+
+.iframe-content {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar */
+
+/* Disable navbar collapse animation, which misbehaves
+   on navbar transitions when navbar is not collapsed. */
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+
+/* Header and navbar */
+
+.navbar-default {
+  background-color: #29235c;
+  border-bottom: 0;
+  }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+  }
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #fff;
+  font-size: 13px;
+  border-right: 1px solid #29235c;
+  padding-right: 9px;
+  padding-left: 9px;
+  }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #005095;
+  border-bottom: 1px solid #29235c;
+  }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #173772;
+  }
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #fff;
+  }
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+  background-color: #173772;
+  }
+
+@media (min-width: 768px) {
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #333;
+    }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #262626;
+    }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+    background-color: #f5f5f5;
+    }
+}
+
+/* this displays the condensed logo for smaller screens */
+@media (max-width: 500px) {
+
+  .navbar-header a.navbar-brand {
+    width: 70px;
+    height: 41px;
+    background: url(/assets/logo-app-compact.png) no-repeat left top;
+    background-size: 63px auto;
+    top: 6px;
+    left: 11px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .navbar-header a.navbar-brand {
+    width: 70px;
+    height: 41px;
+    background: url(/assets/logo-app-compact.png) no-repeat left top;
+    background-size: 63px auto;
+    top: 6px;
+    left: 11px;
+    }
+}
+
+/* Hamburger colour settings */
+
+.navbar-default .navbar-toggle {
+  border-color: #a41346;
+  background-color: #a41346;
+  }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+  }
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  border-color: #8a0c39;
+  background-color: #8a0c39;
+  }
+
+/* ensure radio is immediately followed by its label
+     for the label disable css to work */
+input[type=radio][disabled] + label {
+    color: #ccc;
+}
+
+
+/* Button styles */
+
+.btn-primary {
+  background-color: #a41346;
+  border-color: #a41346;
+  }
+
+.btn-primary:hover {
+  background-color: #8a0c39;
+  border-color: #8a0c39;
+  }
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:active:hover {
+	background-color: #6c0027;
+	border-color: #6c0027;
+	}
+
+.jumbotron .btn {
+  margin: 3px 0;
+  }
+
+
+.btn:active, .btn.active {
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125);
+  }
+
+
+/* Text display styles */
+
+h1, h2, .jumbotron h1 {
+  font-family: trajan-pro-3, Georgia, Times, 'Times New Roman', serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  }
+
+h1.panel-heading {
+  padding-left: 0;
+  }
+
+.app-content h1 {
+	margin-bottom: 20px;
+	}
+
+h2 {
+  font-size: 20px;
+  }
+
+h3 {
+  font-weight: normal;
+  font-family: "sourcesanspro-semibold", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  }
+
+.modal-title {
+  margin-top: 3px;
+  }
+
+/* Jumbotron styles - yacht panels */
+
+.jumbotron  {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  }
+
+.jumbotron h1 {
+  margin-top: 20px;
+  }
+
+.jumbotron h2 {
+  font-weight: normal;
+  font-family: "sourcesanspro-semibold", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0 0 15px;
+  }
+
+.jumbotron p {
+  font-weight: normal;
+  font-size: 15px;
+  }
+
+.app-card-left-pane table {
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  }
+
+div.app-card {
+  margin-top: 20px;
+  }
+
+@media (min-width: 768px) {
+
+  .jumbotron h1 {
+  font-size: 30px;
+  }
+
+  div.app-cardcard {
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  }
+
+}
+
+
+/* Dashboard */
+.container-fluid .jumbotron {
+	padding: 0;
+	border-radius: 0;
+	}
+
+div.app-card {
+	width: 100%;
+	max-width: 1000px;
+	min-height: 220px;
+	margin: 30px 0;
+	}
+
+.app-card.app-boat-jeanneausunodyssey409, .app-card {
+	background: none;
+	}
+
+.app-card .app-card-right-pane {
+	background-image: url('/assets/boats/whisper-card.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+
+.app-card-left-pane {
+	background-color: #27275a;
+	padding: 10px 20px 30px;
+	}
+
+.app-card-left-pane h1, .app-card-left-pane h2, .app-card-left-pane p {
+	margin-bottom: 20px;
+	}
+
+.app-card-left-pane h1 {
+	color: #fff;
+	font-size: 28px;
+	}
+
+.app-card-left-pane h2 {
+	color: #fff;
+	font-size: 15px;
+	}
+
+.app-card-left-pane p {
+	color: #fff;
+	font-size: 14px;
+	}
+
+.app-card-right-pane {
+	padding: 0 0 25px;
+	overflow: hidden;
+	}
+
+.app-card-table {
+	background-color: rgba(39,39,90,0.7);
+	width: 100%;
+	padding: 25px 15px 15px;
+	padding-top: 25px;
+	margin-bottom: -999px;
+    padding-bottom: 999px;
+	}
+
+.app-card-table .table {
+	margin: 0;
+	border-bottom: 1px solid #898da6;
+	}
+
+.app-card-table .table th, .app-card-table .table td {
+	color: #fff;
+	border-top: 1px solid #898da6;
+	}
+
+@media (min-width: 480px) {
+
+	.row-eq-height {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	}
+
+	.app-content .app-card-left-pane {
+		padding: 15px 20px 35px;
+		}
+
+	.app-card-table {
+		padding-top: 35px;
+		}
+
+	.app-card-right-pane {
+		padding-bottom: 40px;
+		}
+
+}
+
+@media (min-width: 768px) {
+
+	.app-card-table {
+		width: 50%;
+		}
+
+	div.app-card {
+		min-height: 240px;
+		}
+
+	.app-card-left-pane h1 {
+		font-size: 28px;
+		}
+
+	.app-card-left-pane h2 {
+		font-size: 16px;
+		margin-bottom: 24px;
+		}
+
+}
+
+@media (min-width: 992px) {
+
+	div.app-card {
+		min-height: 280px;
+		margin: 40px 0;
+		}
+
+	.app-content .app-card-left-pane {
+		padding: 20px 25px 40px;
+		}
+
+	.app-card-left-pane h1 {
+		font-size: 30px;
+		margin-top: 22px;
+		}
+
+	.app-card-left-pane h2 {
+		font-size: 17px;
+		}
+
+	.app-card-left-pane p {
+		font-size: 15px;
+		}
+
+	.app-card-left-pane button.btn {
+		font-size: 16px;
+		}
+
+	.app-card-table {
+		padding-top: 42px;
+		}
+
+	.app-card-table .table {
+		font-size: 1.0em;
+		}
+
+}
+
+@media (min-width: 1200px) {
+
+	div.app-card {
+		min-height: 420px;
+		margin: 60px 0;
+		}
+
+	.app-card-left-pane h1 {
+		font-size: 34px;
+		margin-top: 28px;
+		}
+
+	.app-card-table {
+		padding-top: 50px;
+		}
+
+}
+
+
+/*   Misc styles  */
+
+.app-content {
+	padding-bottom: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+	}
+
+.app-content input[type="radio"] { margin-right: 6px }
+
+.app-slot, .app-trip {
+	font-family: "sourcesanspro-semibold", Helvetica, Arial, sans-serif;
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: #0aa1df;
+	border-color: #0aa1df;
+	border-radius: 3px;
+	}
+
+.btn.app-slot:hover {
+	color: #fff;
+	background-color: #0095d5;
+	border-color: #0095d5;
+	}
+
+label {
+	font-weight: normal;
+	font-family: "sourcesanspro-semibold", Helvetica, Arial, sans-serif;
+	}
+
+
+/*  Picks screen specific styles  */
+
+
+/* Lifesaver Draft Help */
+.btn-lifesaver {
+	border-color: #005391;
+	color: white;
+	background: url(/assets/lifesaver.png) #005391 no-repeat 3px 1px;
+	background-size: auto 36px;
+	padding: 8px 12px 8px 43px;
+	margin-top: 9px !important;
+	}
+	
+.btn-lifesaver:hover {
+	background-color: #01497f;
+	border-color: #01497f;
+	color: white;
+	}
+	
+.btn-lifesaver:active, .btn-lifesaver:focus {
+	background: url(lifesaver.png) #003e6c no-repeat 3px 1px;
+	background-size: auto 36px;
+	border-color: #003e6c;
+	color: white;
+	}
+	
+.modal-header.draft-help {
+	border-color: #005391;
+	border-radius: 4px 4px 0px 0px;
+	-moz-border-radius: 4px 4px 0px 0px;
+	-webkit-border-radius: 4px 4px 0px 0px;
+	color: white;
+	background: url(/assets/lifesaver.png) #005391 no-repeat 5px 5px;
+	background-size: auto 36px;
+	padding: 10px;
+	}
+
+.app-warning mark {
+  display: inline-block;
+  color: #be3634;
+  padding-left: 27px;
+  background: url(/assets/icon-warning.png) #f7dddd no-repeat 3px 3px;
+  background-size: 20px auto;
+  }

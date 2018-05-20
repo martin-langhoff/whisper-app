@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whisper Foiling Catamaran App</title>
+    <!-- FIXME ADD FAVICON 
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    -->
+    <script src="./bower_components/base-64/base64.js"></script>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-bowser/src/angular-bowser.js"></script>
+
+    <!--<script src="./bower_components/autofill-event/src/autofill-event.js"></script> -->
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/lodash/lodash.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./bower_components/angular-ui-select/dist/select.min.js"></script>
+    <link  href="./bower_components/angular-ui-select/dist/select.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href=".//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+    <script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
+    <link  href="./bower_components/ng-dialog/css/ngDialog-theme-default.css" rel="stylesheet" type="text/css">
+    <link  href="./bower_components/bootstrap/dist/css/bootstrap.css"         rel="stylesheet" type="text/css">
+    <!-- Too slow, we use local copy from assets below
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+    <link  href="./assets/Lato_Regular.css" rel='stylesheet' type='text/css'>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <link  href="./bower_components/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+
+    <script src="./bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+    <link  href="./bower_components/angular-ui-notification/dist/angular-ui-notification.min.css" rel="stylesheet" />
+
+    <script src="./app/init.js"></script>
+    <script src="./app/app.js"></script>
+
+    <script src="./app/mod/dashboard/dashboard.js"></script>
+
+    <script src="./app/mod/sailprep/sailprep.js"></script>
+
+    <script src="./app/mod/howto/howto.js"></script>
+
+
+    <link  href="./app/app.css" rel="stylesheet" type="text/css">
+    <script src="./app/app.js"></script>
+    <script>
+    angular.module("whisperapp")
+        .constant("api_url", "http://whisperapp.local/api")
+    </script>
+
+</head>
+
+<body ng-app="whisperapp" ng-view role="document">
+<div ui-view="navbar"></div>
+<div ui-view="status" style="float: right"></div>
+<div ui-view="main"></div>
+
+</body>
+</html>
