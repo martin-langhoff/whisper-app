@@ -30,11 +30,6 @@ angular.module('mod.dashboard')
         function($uibModalInstance, params, $location) {
             'use strict';
             var self = this;
-            self.message = params.message;
-            self.missing = params.missing;
-            self.username = params.username;
-            self.user_id = params.user_id;
-
             self.ok = function () {
                 $uibModalInstance.dismiss('ok');
             };
