@@ -62,15 +62,19 @@ angular.module('mod.sailprep')
                 if (self.wind_strength < 10) {
                     self.rec_downhaul = [0, 0, 0];
                     self.rec_rotator = [45, 45, 90]; // deg
+                    self.rec_outhaul = 15; // cm camber
                 } else if (self.wind_strength < 16) {
                     self.rec_downhaul = [5, 3, 0];
                     self.rec_rotator = [40, 45, 90];
+                    self.rec_outhaul = 10;
                 } else if (self.wind_strength < 22) {
                     self.rec_downhaul = [8, 5, 5];
                     self.rec_rotator = [30, 30, 80];
+                    self.rec_outhaul = 5;
                 } else {
                     self.rec_downhaul = [10, 10, 10];
                     self.rec_rotator = [30, 30, 80];
+                    self.rec_outhaul = 5;
                 };
                 if (self.wind_strength > 5 && self.crew_weight < 100) {
                     self.rec_downhaul = self.rec_downhaul.map(self.bump_downhaul_light_crew);
