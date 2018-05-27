@@ -23,25 +23,29 @@ angular.module('mod.sailprep')
         function($state) {
             'use strict';
             var self = this;
-            self.wind_strengths = null;
-            self.crew_weight = null;
-            self.water_type = null;
-            self.water_temp = null;
 
-            self.ready = false;
+            self.init = function() {
+                self.wind_strength = 15;
+                self.crew_weight = 150;
+                self.water_type = 'fresh';
+                self.water_temp = 20;
 
-            self.wind_strength_list = [ 6, 9, 12, 15, 18, 21, 25 ];
-            self.crew_weight_list = [ 75, 100, 125, 150, 175, 200, 225, 250 ];
+                self.ready = false;
 
-            self.water_type_list = [ 'salt', 'fresh' ]; 
-            self.water_temp_list = [ 5, 10, 15, 20, 25, 30 ]; 
+                self.wind_strength_options = {floor: 5, ceil: 25, onChange: self.change };
+                self.crew_weight_options = {floor: 75, ceil: 250, onChange: self.change };
 
-            /* arrays = up, reach, dw */
-            self.rec_downhaul = ['', '', ''];
-            self.rec_outhaul = ['', '', ''];
-            self.rec_rotator = ['', '', ''];
-            self.rec_foil_rake = ['', '', ''];
+                self.water_type_list = [ 'salt', 'fresh' ]; 
+                self.water_temp_options = {floor: 5, ceil: 30, onChange: self.change };
 
+                /* arrays = up, reach, dw */
+                self.rec_downhaul = ['', '', ''];
+                self.rec_outhaul = ['', '', ''];
+                self.rec_rotator = ['', '', ''];
+                self.rec_foil_rake = ['', '', ''];
+
+                self.change();
+            }
             self.change = function() {
                 if ( self.wind_strength
                      && self.crew_weight
@@ -121,4 +125,6 @@ angular.module('mod.sailprep')
             self.substract_bound = function(v, sub, min) {
                 return Math.max(min, v-sub)
             }
+
+            self.init();
         }]);

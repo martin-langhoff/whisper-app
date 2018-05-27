@@ -4,32 +4,22 @@
   <form class="form-horizontal" role="form" ng-submit="ctrl.save()">
 
     <div class="form-group">
-        <label for="wind_strength" class="col-sm-2 control-label">Wind strength</label>
+        <label for="wind_strength" class="col-sm-2 control-label">Wind (kt)</label>
       <div class="col-sm-10">
-      <select name="wind_strength"
-              class="form-control"
-              ng-model="ctrl.wind_strength"
-              ng-change="ctrl.change()" >
-            <option ng-repeat="ws in ctrl.wind_strength_list"
-                ng-selected="ws==ctrl.wind_strength"
-                value="{{ws}}"
-                >{{ws}} knots</option>
-         </select>
+        <rzslider
+            name="wind_strength"
+             rz-slider-model="ctrl.wind_strength"
+             rz-slider-options="ctrl.wind_strength_options" />
       </div>
     </div>
 
     <div class="form-group">
-        <label for="crew_weight" class="col-sm-2 control-label">Crew Weight</label>
-      <div class="col-sm-10">
-      <select name="crew_weight"
-              class="form-control"
-              ng-model="ctrl.crew_weight"
-              ng-change="ctrl.change()" >
-            <option ng-repeat="cw in ctrl.crew_weight_list"
-                ng-selected="cw==ctrl.crew_weight"
-                value="{{cw}}"
-                >{{cw}} Kg</option>
-         </select>
+        <label for="crew_weight" class="col-sm-2 control-label">Crew Weight (Kg)</label>
+        <div class="col-sm-10">
+            <rzslider
+                name="crew_weight"
+                rz-slider-model="ctrl.crew_weight"
+                rz-slider-options="ctrl.crew_weight_options" />
       </div>
     </div>
 
@@ -51,15 +41,10 @@
     <div class="form-group">
         <label for="water_temp" class="col-sm-2 control-label">Water Temp</label>
       <div class="col-sm-10">
-      <select name="water_temp"
-              class="form-control"
-              ng-model="ctrl.water_temp"
-              ng-change="ctrl.change()" >
-            <option ng-repeat="wt in ctrl.water_temp_list"
-                ng-selected="wt==ctrl.water_temp"
-                value="{{wt}}"
-                >{{wt}} C</option>
-         </select>
+            <rzslider
+                name="water_temp"
+                rz-slider-model="ctrl.water_temp"
+                rz-slider-options="ctrl.water_temp_options" />
       </div>
     </div>
 
