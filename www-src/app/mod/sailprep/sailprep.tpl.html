@@ -26,15 +26,7 @@
     <div class="form-group">
         <label for="water_type" class="col-sm-2 control-label">Water</label>
       <div class="col-sm-10">
-      <select name="water_type"
-              class="form-control"
-              ng-model="ctrl.water_type"
-              ng-change="ctrl.change()" >
-            <option ng-repeat="wt in ctrl.water_type_list"
-                ng-selected="wt==ctrl.water_type"
-                value="{{wt}}"
-                >{{wt}}</option>
-         </select>
+        <toggle ng-model="ctrl.is_salt" ng-change="ctrl.change()" on="Salt" off="Fresh&nbsp;"></toggle>
       </div>
     </div>
 

@@ -27,15 +27,12 @@ angular.module('mod.sailprep')
             self.init = function() {
                 self.wind_strength = 15;
                 self.crew_weight = 150;
-                self.water_type = 'fresh';
+                self.is_salty = false;
                 self.water_temp = 20;
-
-                self.ready = false;
 
                 self.wind_strength_options = {floor: 5, ceil: 25, onChange: self.change };
                 self.crew_weight_options = {floor: 75, ceil: 250, onChange: self.change };
 
-                self.water_type_list = [ 'salt', 'fresh' ]; 
                 self.water_temp_options = {floor: 5, ceil: 30, onChange: self.change };
 
                 /* arrays = up, reach, dw */
@@ -45,18 +42,10 @@ angular.module('mod.sailprep')
                 self.rec_foil_rake = ['', '', ''];
 
                 self.change();
-            }
+            };
+
             self.change = function() {
-                if ( self.wind_strength
-                     && self.crew_weight
-                     && self.water_type
-                     && self.water_temp) {
-                    self.ready = true;
-                    self.calculate();
-                } else {
-                    self.ready = false;
-                    return
-                }
+                self.calculate();
             };
 
             self.calculate = function() {
@@ -100,7 +89,7 @@ angular.module('mod.sailprep')
                     self.rec_foil_rake = self.substract_bound(self.rec_foil_rake, 0.5, rake_min);
                 }
                 // Adjust for water type
-                if (self.water_type === 'salt') {
+                if (self.is_salt) {
                     self.rec_foil_rake = self.substract_bound(self.rec_foil_rake, 0.5, rake_min);
                 }
                 // Adjust for water temp
