@@ -21,7 +21,8 @@
     "angular-ui-notification": "^0.3.6",
     "angular-ui-router": "^1.0.18",
     "angular": "^1.7.0",
-    "bootstrap": "3.3.6"
+    "bootstrap": "3.3.6",
+    "angularjs-slider": "^6.5.1"
   },
   "resolutions": {
     "bootstrap": "3.3.6"
