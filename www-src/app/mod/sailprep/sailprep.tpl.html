@@ -2,10 +2,9 @@
 <div id="users" class="container-fluid app-content" ng-cloak>
   <h1>Getting ready</h1>
   <form class="form-horizontal" role="form" ng-submit="ctrl.save()">
-
-    <div class="form-group">
-        <label for="wind_strength" class="col-sm-2 control-label">Wind (kt)</label>
-      <div class="col-sm-10">
+    <div class="row form-group">
+        <label for="wind_strength" class="col-sm-5 control-label">Wind (kt)</label>
+      <div class="col-sm-7">
         <rzslider
             name="wind_strength"
              rz-slider-model="ctrl.wind_strength"
@@ -13,9 +12,9 @@
       </div>
     </div>
 
-    <div class="form-group">
-        <label for="crew_weight" class="col-sm-2 control-label">Crew Weight (Kg)</label>
-        <div class="col-sm-10">
+    <div class="row form-group">
+        <label for="crew_weight" class="col-sm-5 control-label">Crew Weight (Kg)</label>
+        <div class="col-sm-7">
             <rzslider
                 name="crew_weight"
                 rz-slider-model="ctrl.crew_weight"
@@ -23,16 +22,16 @@
       </div>
     </div>
 
-    <div class="form-group">
-        <label for="water_type" class="col-sm-2 control-label">Water</label>
-      <div class="col-sm-10">
+    <div class="row form-group">
+        <label for="water_type" class="col-sm-5 control-label">Water</label>
+      <div class="col-sm-7">
         <toggle ng-model="ctrl.is_salt" ng-change="ctrl.change()" on="Salt" off="Fresh&nbsp;"></toggle>
       </div>
     </div>
 
-    <div class="form-group">
-        <label for="water_temp" class="col-sm-2 control-label">Water Temp (C)</label>
-      <div class="col-sm-10">
+    <div class="row form-group">
+        <label for="water_temp" class="col-sm-5 control-label">Water Temp (C)</label>
+      <div class="col-sm-7">
             <rzslider
                 name="water_temp"
                 rz-slider-model="ctrl.water_temp"
@@ -41,28 +40,52 @@
     </div>
 
 <!--     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-2 col-sm-7">
         <input type="submit" class="btn btn-primary" value="Save"/>
       </div>
     </div> -->
   </form>
 
-  <div id="recommendations">
+  <div id="recommendations" class="card">
     <h2>Recommendations</h2>
-    <div> <!-- <div ng-if="ctrl.ready===true"> -->
-        <p>General</p>
-        <ul>
-            <li>Downhaul: {{ctrl.rec_downhaul}}
-            </li>
-            <li>Outhaul: {{ctrl.rec_outhaul}}
-            </li>
-            <li>Mast Rotator: {{ctrl.rec_rotator}}
-            </li>
-            <li>Foil Rake: {{ctrl.rec_foil_rake}}
-            </li>
-            <li>Jib Clew: {{ctrl.jib_clew}}
-            </li>
-        </ul>
-    </div>
+    <table class="table app-recommendations">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Adj</th>
+                <th scope="col">Upwind</th>
+                <th scope="col">Reach</th>
+                <th scope="col">Downwind</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Downhaul (cm)</th>
+            <td>{{ctrl.rec_downhaul[0]}}</td>
+            <td>{{ctrl.rec_downhaul[1]}}</td>
+            <td>{{ctrl.rec_downhaul[2]}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Outhaul (cm camber)</th>
+            <td>{{ctrl.rec_outhaul[0]}}</td>
+            <td>{{ctrl.rec_outhaul[1]}}</td>
+            <td>{{ctrl.rec_outhaul[2]}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Mast rot (angle)</th>
+            <td>{{ctrl.rec_rotator[0]}}</td>
+            <td>{{ctrl.rec_rotator[1]}}</td>
+            <td>{{ctrl.rec_rotator[2]}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Foil rake</th>
+            <td colspan="3">{{ctrl.rec_foil_rake}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Jib clew</th>
+            <td colspan="3">{{ctrl.jib_clew}}</td>
+        </tr>
+
+        </tbody>
+    </table>
   </div>
 </div>
