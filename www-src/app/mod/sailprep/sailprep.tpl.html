@@ -46,46 +46,52 @@
     </div> -->
   </form>
 
-  <div id="recommendations" class="card">
-    <h2>Recommendations</h2>
-    <table class="table app-recommendations">
-        <thead class="thead-light">
+  <div id="recommendations" class="card bg-light app-recommendations">
+    <div class="card-body">
+        <h2>Recommendations</h2>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Adj</th>
+                    <th scope="col" style="text-align: center">Upwind</th>
+                    <th scope="col" style="text-align: center">Reach</th>
+                    <th scope="col" style="text-align: center">Downwind</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Downhaul (cm)</th>
+                <td>{{ctrl.rec_downhaul[0]}}</td>
+                <td>{{ctrl.rec_downhaul[1]}}</td>
+                <td>{{ctrl.rec_downhaul[2]}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Outhaul (cm camber)</th>
+                <td>{{ctrl.rec_outhaul[0]}}</td>
+                <td>{{ctrl.rec_outhaul[1]}}</td>
+                <td>{{ctrl.rec_outhaul[2]}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Mast rot (angle)</th>
+                <td>{{ctrl.rec_rotator[0]}}</td>
+                <td>{{ctrl.rec_rotator[1]}}</td>
+                <td>{{ctrl.rec_rotator[2]}}</td>
+            </tr>
             <tr>
                 <th scope="col">Adj</th>
-                <th scope="col">Upwind</th>
-                <th scope="col">Reach</th>
-                <th scope="col">Downwind</th>
+                <th scope="col" colspan="3" style="text-align: center">Setting</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">Downhaul (cm)</th>
-            <td>{{ctrl.rec_downhaul[0]}}</td>
-            <td>{{ctrl.rec_downhaul[1]}}</td>
-            <td>{{ctrl.rec_downhaul[2]}}</td>
-        </tr>
-        <tr>
-            <th scope="row">Outhaul (cm camber)</th>
-            <td>{{ctrl.rec_outhaul[0]}}</td>
-            <td>{{ctrl.rec_outhaul[1]}}</td>
-            <td>{{ctrl.rec_outhaul[2]}}</td>
-        </tr>
-        <tr>
-            <th scope="row">Mast rot (angle)</th>
-            <td>{{ctrl.rec_rotator[0]}}</td>
-            <td>{{ctrl.rec_rotator[1]}}</td>
-            <td>{{ctrl.rec_rotator[2]}}</td>
-        </tr>
-        <tr>
-            <th scope="row">Foil rake</th>
-            <td colspan="3">{{ctrl.rec_foil_rake}}</td>
-        </tr>
-        <tr>
-            <th scope="row">Jib clew</th>
-            <td colspan="3">{{ctrl.jib_clew}}</td>
-        </tr>
+            <tr>
+                <th scope="row">Foil rake</th>
+                <td colspan="3">{{ctrl.rec_foil_rake}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Jib clew</th>
+                <td colspan="3">{{ctrl.jib_clew}}</td>
+            </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
   </div>
 </div>

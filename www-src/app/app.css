@@ -403,6 +403,10 @@ div.app-card {
   border-top: 1px solid #898da6;
   }
 
+.app-recommendations td {
+  text-align: center;
+}
+
 @media (min-width: 480px) {
 
   .row-eq-height {
