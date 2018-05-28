@@ -40,6 +40,7 @@ angular.module('mod.sailprep')
                 self.rec_outhaul = ['', '', ''];
                 self.rec_rotator = ['', '', ''];
                 self.rec_foil_rake = ['', '', ''];
+                self.jib_clew = '';
 
                 self.change();
             };
@@ -52,22 +53,26 @@ angular.module('mod.sailprep')
                 const rake_max = 4.5;
                 const rake_min = 2;
 
+                self.jib_clew = 'top';
+
                 if (self.wind_strength < 10) {
                     self.rec_downhaul = [0, 0, 0];
                     self.rec_rotator = [45, 45, 90]; // deg
-                    self.rec_outhaul = 15; // cm camber
+                    self.rec_outhaul = [12, 13, 15]; // cm camber
                 } else if (self.wind_strength < 16) {
                     self.rec_downhaul = [5, 3, 0];
                     self.rec_rotator = [40, 45, 90];
-                    self.rec_outhaul = 10;
+                    self.rec_outhaul = [10, 10, 15];
                 } else if (self.wind_strength < 22) {
                     self.rec_downhaul = [8, 5, 5];
                     self.rec_rotator = [30, 30, 80];
-                    self.rec_outhaul = 5;
+                    self.rec_outhaul = [7, 7, 10];
+                    self.jib_clew    = 'middle';
                 } else {
                     self.rec_downhaul = [10, 10, 10];
                     self.rec_rotator = [30, 30, 80];
-                    self.rec_outhaul = 5;
+                    self.rec_outhaul = [3, 3, 5];
+                    self.jib_clew = 'bottom';
                 };
                 if (self.wind_strength > 5 && self.crew_weight < 100) {
                     self.rec_downhaul = self.rec_downhaul.map(self.bump_downhaul_light_crew);
@@ -94,11 +99,7 @@ angular.module('mod.sailprep')
                 }
                 // Adjust for water temp
                 if (self.water_temp < 10) {
-                    self.rec_foil_rake = self.add_bound(self.rec_foil_rake, 1, rake_max);
-                } else if (self.water_temp < 20) {
                     self.rec_foil_rake = self.add_bound(self.rec_foil_rake, 0.5, rake_max);
-                } else if (self.water_temp > 25) {
-                    self.rec_foil_rake = self.substract_bound(self.rec_foil_rake, 0.5, rake_min);
                 }
 
             };
